@@ -80,6 +80,7 @@ The data warehouse follows a **Star Schema** design optimized for analytical que
 
 ## Repository Structure
 
+```text
 linkedin-job-trends-pipeline/
 ├── README.md                      # Comprehensive project documentation
 ├── architecture/                  # Visual diagrams & schemas
@@ -94,6 +95,7 @@ linkedin-job-trends-pipeline/
 └── screenshots/                   # Dashboard outputs & logs proof
     ├── quicksight_dashboard.png   # Visualization snippet
     └── cloudwatch_logs.png        # Execution logs proof
+```
 
 ---
 
