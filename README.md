@@ -85,6 +85,7 @@ linkedin-job-trends-pipeline/
 ├── README.md                      # Comprehensive project documentation
 ├── architecture/                  # Visual diagrams & schemas
 │   ├── architecture_diagram.png   # AWS data flow diagram
+│   └── conceptual_model.png       # High-level business domains and data flow
 │   └── relational_model.png       # Star schema / ERD diagram
 ├── glue_jobs/                     # PySpark transformation scripts
 │   └── job_postings_etl.py        # Glue PySpark job for fact & dimension processing
