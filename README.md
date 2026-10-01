@@ -35,7 +35,7 @@ flowchart TD
     S3Integration --> Catalog
     Catalog --> Athena
     Athena --> QuickSight
-
+```
 ---
 
 ## Project Overview & Objectives
