@@ -81,21 +81,36 @@ The data warehouse follows a **Star Schema** design optimized for analytical que
 ## Repository Structure
 
 ```text
-linkedin-job-trends-pipeline/
-├── README.md                      # Comprehensive project documentation
+    linkedin-job-trends-pipeline/
+├── README.md                      # Comprehensive project documentation & execution order
 ├── architecture/                  # Visual diagrams & schemas
 │   ├── architecture_diagram.png   # AWS data flow diagram
-│   └── conceptual_model.png       # High-level business domains and data flow
+│   ├── conceptual_model.png       # High-level business domains and data flow
 │   └── relational_model.png       # Star schema / ERD diagram
-├── glue_jobs/                     # PySpark transformation scripts
-│   └── job_postings_etl.py        # Glue PySpark job for fact & dimension processing
+├── glue_jobs/                     # PySpark ETL jobs & notebooks
+│   ├── dimensions/                # Master dimension loading scripts
+│   │   ├── calendar_job.py
+│   │   ├── companies_job.py
+│   │   ├── jobs_job.py
+│   │   ├── industries_job.py
+│   │   └── benefits_job.py
+│   ├── bridges/                   # Many-to-many relationship mapping scripts & notebooks
+│   │   ├── companies_industries_job.py
+│   │   ├── jobs_skills_job.py  # 
+│   │   └── jobs_benefits_job.py
+│   └── fact/                     # Fact table loading scripts
+│       └── job_postings_fact_job.py
+├── sql/                           # Database schemas & analytical queries
+│   ├── ddl/                       # Athena table creation scripts
+│   │   ├── dimensions_ddl.sql     # DDLs for all dimension tables
+│   │   ├── bridges_ddl.sql        # DDLs for all bridge/junction tables
+│   │   └── facts_ddl.sql          # DDL for job_postings_fact
+│   └── analytics_views.sql        # Core queries used for QuickSight reporting
 ├── lambda/                        # Event-driven automation
 │   └── lambda_trigger.py          # Lambda function script to trigger Glue
-├── sql/                           # Athena analytical queries
-│   └── analytics_views.sql        # Core queries used for QuickSight reporting
-└── screenshots/                   # Dashboard outputs & logs proof
+└── screenshots/                   # Dashboard outputs & logs
     ├── quicksight_dashboard.png   # Visualization snippet
-    └── cloudwatch_logs.png        # Execution logs proof
+    └── cloudwatch_logs.png        # Execution logs
 ```
 
 ---
