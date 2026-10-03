@@ -108,7 +108,7 @@ The data warehouse follows a **Star Schema** design optimized for analytical que
 │   └── analytics_views.sql        # Core queries used for QuickSight reporting
 ├── lambda/                        # Event-driven automation
 │   └── lambda_trigger.py          # Lambda function script to trigger Glue
-└── screenshots/                   # Dashboard outputs & logs
+└── visualization/                   # Visualization graphs
     ├── quicksight_dashboard.png   # Visualization snippet
     └── cloudwatch_logs.png        # Execution logs
 ```
